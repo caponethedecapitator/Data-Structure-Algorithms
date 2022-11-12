@@ -99,8 +99,8 @@ class BinarySearchTree
 
     public void delete(int key)
     {
-        TreeNode parent = this.root;
-        TreeNode cur = this.root;
+        Node parent = this.root;
+        Node cur = this.root;
 
         while (cur != null)
         {
@@ -135,7 +135,7 @@ class BinarySearchTree
 
                 else if (cur.left != null && cur.right == null)
                 {
-                    TreeNode leftchild = cur.left;
+                    Node leftchild = cur.left;
                     
                     if (cur == parent.left)
                     {
@@ -154,7 +154,7 @@ class BinarySearchTree
 
                 else if (cur.left == null && cur.right != null)
                 {
-                    TreeNode rightchild = cur.right;
+                    Node rightchild = cur.right;
 
                     if (cur == parent.left)
                     {
@@ -173,7 +173,7 @@ class BinarySearchTree
 
                 else if (cur.left != null && cur.right != null)
                 {
-                    TreeNode successor = cur.right;
+                    Node successor = cur.right;
 
                     if (cur == root)
                     {
@@ -188,7 +188,7 @@ class BinarySearchTree
 
                         else if (successor.left != null)
                         {
-                            TreeNode prevSuccessor = successor; 
+                            Node prevSuccessor = successor; 
                             while (successor.left != null)
                             {
                                 prevSuccessor = successor;
@@ -208,7 +208,7 @@ class BinarySearchTree
 
                             else if (successor.right != null)
                             {
-                                TreeNode temp = successor.right;
+                                Node temp = successor.right;
                                 successor.left = cur.left;
                                 cur.left = null;
                                 successor.right = cur.right;
@@ -235,7 +235,7 @@ class BinarySearchTree
 
                             else if (successor.left != null)
                             {
-                                TreeNode prevSuccessor = successor;
+                                Node prevSuccessor = successor;
                                 while (successor.left != null)
                                 {
                                     prevSuccessor = successor;
@@ -255,7 +255,7 @@ class BinarySearchTree
 
                                 else if (successor.right != null)
                                 {
-                                    TreeNode temp = successor.right;
+                                    Node temp = successor.right;
                                     parent.left = successor;
                                     successor.left = cur.left;
                                     cur.left = null;
@@ -280,7 +280,7 @@ class BinarySearchTree
 
                             else if (successor.left != null)
                             {
-                                TreeNode prevSuccessor = successor;
+                                Node prevSuccessor = successor;
                                 while (successor.left != null)
                                 {
                                     prevSuccessor = successor;
@@ -300,7 +300,7 @@ class BinarySearchTree
 
                                 else if (successor.right != null)
                                 {
-                                    TreeNode temp = successor.right;
+                                    Node temp = successor.right;
                                     parent.right = successor;
                                     successor.left = cur.left;
                                     cur.left = null;
